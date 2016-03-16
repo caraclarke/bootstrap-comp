@@ -14,7 +14,17 @@
     <script src="js/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.js"></script>
     <script type="text/babel">
+    
+      // Navbar Component
       var Navbar = React.createClass({
+        propTypes: {
+          brand: React.PropTypes.string
+        },
+        getDefaultProps: function() {
+          return {
+            brand: 'My Website'
+          }
+        },
         render: function() {
           return (
             <div>
@@ -27,7 +37,7 @@
                       <span className="icon-bar"></span>
                       <span className="icon-bar"></span>
                     </button>
-                    <a className="navbar-brand" href="#">My Website</a>
+                    <a className="navbar-brand" href="#">{this.props.brand}</a>
                   </div>
 
                   <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -44,13 +54,25 @@
       });
       
       var Jumbotron = React.createClass({
+        PropTypes: {
+          heading: React.PropTypes.string,
+          text: React.PropTypes.string,
+          link: React.PropTypes.string
+        },
+        getDefaultProps: function() {
+          return {
+            heading: 'Welcome',
+            text: 'Welcome to our shiny new website built with React components',
+            link: 'http://google.com'
+          }
+        },
         render: function() {
           return (
             <div className="jumbotron">
               <div className="container">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a className="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+                <h1>{this.props.heading}</h1>
+                <p>{this.props.text}</p>
+                <p><a className="btn btn-primary btn-lg" href={this.props.link} target="_blank" role="button">Learn more &raquo;</a></p>
               </div>
             </div>
           )
@@ -72,13 +94,19 @@
       
       // Footer Component
       var Footer = React.createClass({
+        getDefaultProps: function() {
+          return {
+            website: 'MyWebsite',
+            copy_year: 2016
+          }
+        },
         render: function() {
           return (
             <div>
               <hr />
               
               <footer>
-                <p>&copy; 2015 Company, Inc.</p>
+                <p>&copy; {this.props.copy_year} {this.props.website}</p>
               </footer>
             </div>
           )
@@ -103,6 +131,7 @@
         <App />,
         document.getElementById('app')
       );
+      
     </script>
   </body>
 </html>
