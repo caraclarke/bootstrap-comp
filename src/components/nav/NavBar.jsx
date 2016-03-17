@@ -13,11 +13,18 @@ var NavBar = React.createClass({
     }
   },
   render: function() {
+    if (this.props.color == 'dark') {
+      var navClass = 'navbar navbar-inverse';
+    } else {
+      var navClass = 'navbar navbar-default';
+    }
+    
     var navStyle = {
       WebkitBoxShadow: "0 0 4px rgba(0,0,0.4)",
       MozBoxShadow: "0 0 4px rgba(0,0,0.4)",
       boxShadow: "0 0 4px rgba(0,0,0.4)",
-      borderRadius: 0
+      borderRadius: 0,
+      marginBottom: 25
     };
     
     var titleStyle = {};
@@ -38,7 +45,7 @@ var NavBar = React.createClass({
     
     return (
       <div>
-        <nav className="navbar navbar-default" style={navStyle}>
+        <nav className="navClass" style={navStyle}>
           <div className="container-fluid">
             <div className="navbar-header">
               <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

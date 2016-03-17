@@ -23926,7 +23926,7 @@ var App = React.createClass({
     return React.createElement(
       'div',
       null,
-      React.createElement(NavBar, { bgColor: '#fff', titleColor: '#3097d1', linkColor: '', navData: navLinks }),
+      React.createElement(NavBar, { titleColor: '#3097d1', linkColor: '', navData: navLinks }),
       React.createElement(Jumbotron, null),
       React.createElement(HomePage, null),
       React.createElement(Footer, null)
@@ -24071,11 +24071,18 @@ var NavBar = React.createClass({
     };
   },
   render: function () {
+    if (this.props.color == 'dark') {
+      var navClass = 'navbar navbar-inverse';
+    } else {
+      var navClass = 'navbar navbar-default';
+    }
+
     var navStyle = {
       WebkitBoxShadow: "0 0 4px rgba(0,0,0.4)",
       MozBoxShadow: "0 0 4px rgba(0,0,0.4)",
       boxShadow: "0 0 4px rgba(0,0,0.4)",
-      borderRadius: 0
+      borderRadius: 0,
+      marginBottom: 25
     };
 
     var titleStyle = {};
@@ -24096,7 +24103,7 @@ var NavBar = React.createClass({
       null,
       React.createElement(
         'nav',
-        { className: 'navbar navbar-default', style: navStyle },
+        { className: 'navClass', style: navStyle },
         React.createElement(
           'div',
           { className: 'container-fluid' },

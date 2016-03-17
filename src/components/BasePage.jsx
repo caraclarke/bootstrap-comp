@@ -25,7 +25,7 @@ var App = React.createClass({
   
     return (
       <div>
-        <NavBar bgColor="#fff" titleColor="#3097d1" linkColor="" navData={navLinks}/>
+        <NavBar titleColor="#3097d1" linkColor="" navData={navLinks}/>
         <Jumbotron />
         <HomePage />
         <Footer />
