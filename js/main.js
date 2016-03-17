@@ -23950,13 +23950,17 @@ var Footer = React.createClass({
     };
   },
   render: function () {
+    var style = {
+      paddingLeft: 15
+    };
+
     return React.createElement(
       'div',
       null,
       React.createElement('hr', null),
       React.createElement(
         'footer',
-        null,
+        { style: style },
         React.createElement(
           'p',
           null,
@@ -24179,7 +24183,6 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var Link = require('react-router').Link;
 var IndexRoute = ReactRouter.IndexRoute;
-// var browserHistory = require('react-router').browserHistory;
 var hashHistory = require('react-router').hashHistory;
 
 var BasePage = require('./components/BasePage.jsx');

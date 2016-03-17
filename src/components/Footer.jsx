@@ -9,11 +9,15 @@ var Footer = React.createClass({
     }
   },
   render: function() {
+    var style = {
+      paddingLeft: 15
+    }
+    
     return (
       <div>
         <hr />
         
-        <footer>
+        <footer style={style}>
           <p>&copy; {this.props.copy_year} {this.props.website}</p>
         </footer>
       </div>
