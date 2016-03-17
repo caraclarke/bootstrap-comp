@@ -1,0 +1,35 @@
+{
+  "name": "bootstrap-comp",
+  "version": "1.0.0",
+  "description": "practice",
+  "main": "main.js",
+  "dependencies": {
+    "babel-core": "^6.7.2",
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "watchify src/main.jsx -v -t [ babelify --presets [ react ] ] -o js/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caraclarke/bootstrap-comp.git"
+  },
+  "author": "Cara Clarke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caraclarke/bootstrap-comp/issues"
+  },
+  "homepage": "https://github.com/caraclarke/bootstrap-comp#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "email-validator": "^1.0.4",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "react-router": "^2.0.0",
+    "reflux": "^0.4.0",
+    "watchify": "^3.7.0",
+    "whatwg-fetch": "^0.11.0"
+  }
+}

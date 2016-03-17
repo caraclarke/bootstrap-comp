@@ -23925,7 +23925,8 @@ var App = React.createClass({
     return React.createElement(
       'div',
       null,
-      React.createElement(NavBar, { bgColor: '#fff', titleColor: '#3097d1', linkColor: '', navData: navLinks })
+      React.createElement(NavBar, { bgColor: '#fff', titleColor: '#3097d1', linkColor: '', navData: navLinks }),
+      React.createElement(Jumbotron, null)
     );
   }
 });
@@ -23993,6 +23994,7 @@ module.exports = HomePage;
 
 },{"react":214}],219:[function(require,module,exports){
 var React = require('react');
+var Link = require('react-router').Link;
 
 var Jumbotron = React.createClass({
   displayName: 'Jumbotron',
@@ -24030,8 +24032,8 @@ var Jumbotron = React.createClass({
           'p',
           null,
           React.createElement(
-            'a',
-            { className: 'btn btn-primary btn-lg', href: this.props.link, target: '_blank', role: 'button' },
+            Link,
+            { className: 'btn btn-primary btn-lg', to: this.props.link, target: '_blank', role: 'button' },
             'Learn more »'
           )
         )
@@ -24040,7 +24042,9 @@ var Jumbotron = React.createClass({
   }
 });
 
-},{"react":214}],220:[function(require,module,exports){
+module.exports = Jumbotron;
+
+},{"react":214,"react-router":29}],220:[function(require,module,exports){
 var React = require('react');
 var NavItem = require('./NavItem.jsx');
 var Link = require('react-router').Link;
