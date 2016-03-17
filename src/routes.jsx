@@ -4,7 +4,6 @@ var Router = require('react-router').Router;
 var Route = require('react-router').Route;
 var Link = require('react-router').Link;
 var IndexRoute = ReactRouter.IndexRoute;
-// var browserHistory = require('react-router').browserHistory;
 var hashHistory = require('react-router').hashHistory;
 
 var BasePage = require('./components/BasePage.jsx');
