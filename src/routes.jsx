@@ -9,11 +9,15 @@ var hashHistory = require('react-router').hashHistory;
 var BasePage = require('./components/BasePage.jsx');
 var HomePage = require('./components/HomePage.jsx');
 var Jumbotron = require('./components/Jumbotron.jsx');
+var AboutPage = require('./components/AboutPage.jsx');
 
 var Routes = (
   <Router history={hashHistory}>
     <Route path="/" component={BasePage}>
-      <IndexRoute component={HomePage}></IndexRoute>
+      <IndexRoute component={HomePage} />
+    </Route>
+    <Route path="/about" component={BasePage}>
+      <IndexRoute component={AboutPage} />
     </Route>
   </Router>
 );

@@ -23901,6 +23901,36 @@ process.umask = function() { return 0; };
 
 },{}],216:[function(require,module,exports){
 var React = require('react');
+
+var AboutPage = React.createClass({
+  displayName: "AboutPage",
+
+  render: function () {
+    return React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "div",
+        { className: "row" },
+        React.createElement(
+          "h2",
+          { className: "page-header" },
+          "About Us"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "Some Content"
+        )
+      )
+    );
+  }
+});
+
+module.exports = AboutPage;
+
+},{"react":214}],217:[function(require,module,exports){
+var React = require('react');
 var NavBar = require('./nav/NavBar.jsx');
 var Jumbotron = require('./Jumbotron.jsx');
 var HomePage = require('./HomePage.jsx');
@@ -23933,7 +23963,7 @@ var App = React.createClass({
 
 module.exports = App;
 
-},{"./Footer.jsx":217,"./HomePage.jsx":218,"./Jumbotron.jsx":219,"./nav/NavBar.jsx":220,"react":214}],217:[function(require,module,exports){
+},{"./Footer.jsx":218,"./HomePage.jsx":219,"./Jumbotron.jsx":220,"./nav/NavBar.jsx":221,"react":214}],218:[function(require,module,exports){
 var React = require('react');
 
 // Footer Component
@@ -23973,7 +24003,7 @@ var Footer = React.createClass({
 
 module.exports = Footer;
 
-},{"react":214}],218:[function(require,module,exports){
+},{"react":214}],219:[function(require,module,exports){
 var React = require('react');
 var Jumbotron = require('./Jumbotron.jsx');
 
@@ -23993,9 +24023,9 @@ var HomePage = React.createClass({
           'div',
           { className: 'row' },
           React.createElement(
-            'p',
-            null,
-            'Main content'
+            'h2',
+            { className: 'page-header' },
+            'Home'
           )
         )
       )
@@ -24004,7 +24034,7 @@ var HomePage = React.createClass({
 });
 module.exports = HomePage;
 
-},{"./Jumbotron.jsx":219,"react":214}],219:[function(require,module,exports){
+},{"./Jumbotron.jsx":220,"react":214}],220:[function(require,module,exports){
 var React = require('react');
 var Link = require('react-router').Link;
 
@@ -24056,7 +24086,7 @@ var Jumbotron = React.createClass({
 
 module.exports = Jumbotron;
 
-},{"react":214,"react-router":29}],220:[function(require,module,exports){
+},{"react":214,"react-router":29}],221:[function(require,module,exports){
 var React = require('react');
 var NavItem = require('./NavItem.jsx');
 var Link = require('react-router').Link;
@@ -24148,7 +24178,7 @@ var NavBar = React.createClass({
 
 module.exports = NavBar;
 
-},{"./NavItem.jsx":221,"react":214,"react-router":29}],221:[function(require,module,exports){
+},{"./NavItem.jsx":222,"react":214,"react-router":29}],222:[function(require,module,exports){
 var React = require('react');
 var Link = require('react-router').Link;
 
@@ -24179,14 +24209,14 @@ var NavItem = React.createClass({
 
 module.exports = NavItem;
 
-},{"react":214,"react-router":29}],222:[function(require,module,exports){
+},{"react":214,"react-router":29}],223:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Routes = require('./routes.jsx');
 
 ReactDOM.render(Routes, document.getElementById('app'));
 
-},{"./routes.jsx":223,"react":214,"react-dom":1}],223:[function(require,module,exports){
+},{"./routes.jsx":224,"react":214,"react-dom":1}],224:[function(require,module,exports){
 var React = require('react');
 var ReactRouter = require('react-router');
 var Router = require('react-router').Router;
@@ -24198,6 +24228,7 @@ var hashHistory = require('react-router').hashHistory;
 var BasePage = require('./components/BasePage.jsx');
 var HomePage = require('./components/HomePage.jsx');
 var Jumbotron = require('./components/Jumbotron.jsx');
+var AboutPage = require('./components/AboutPage.jsx');
 
 var Routes = React.createElement(
   Router,
@@ -24206,9 +24237,14 @@ var Routes = React.createElement(
     Route,
     { path: '/', component: BasePage },
     React.createElement(IndexRoute, { component: HomePage })
+  ),
+  React.createElement(
+    Route,
+    { path: '/about', component: BasePage },
+    React.createElement(IndexRoute, { component: AboutPage })
   )
 );
 
 module.exports = Routes;
 
-},{"./components/BasePage.jsx":216,"./components/HomePage.jsx":218,"./components/Jumbotron.jsx":219,"react":214,"react-router":29}]},{},[222]);
+},{"./components/AboutPage.jsx":216,"./components/BasePage.jsx":217,"./components/HomePage.jsx":219,"./components/Jumbotron.jsx":220,"react":214,"react-router":29}]},{},[223]);

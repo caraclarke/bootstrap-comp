@@ -9,7 +9,7 @@ var HomePage = React.createClass({
         <Jumbotron />
         <div className="container">
             <div className="row">
-                <p>Main content</p>
+                <h2 className="page-header">Home</h2>
             </div>
           </div>
       </div>
