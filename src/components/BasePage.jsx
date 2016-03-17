@@ -10,12 +10,8 @@ var navLinks = [
     href: "/"
   },
   {
-    title: "Practice",
-    href: "/product/"
-  },
-  {
-    title: "Practice Two",
-    href: "/product/2"
+    title: "About",
+    href: "/about/"
   }
 ];
 

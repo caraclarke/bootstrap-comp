@@ -23910,11 +23910,8 @@ var navLinks = [{
   title: "Home",
   href: "/"
 }, {
-  title: "Practice",
-  href: "/product/"
-}, {
-  title: "Practice Two",
-  href: "/product/2"
+  title: "About",
+  href: "/about/"
 }];
 
 // Main App Component
