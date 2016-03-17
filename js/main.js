@@ -23919,13 +23919,13 @@ var App = React.createClass({
   displayName: 'App',
 
   render: function () {
+    // const { main, content } = this.props.children
 
     return React.createElement(
       'div',
       null,
       React.createElement(NavBar, { titleColor: '#3097d1', linkColor: '', navData: navLinks }),
-      React.createElement(Jumbotron, null),
-      React.createElement(HomePage, null),
+      this.props.children,
       React.createElement(Footer, null)
     );
   }
@@ -23975,22 +23975,28 @@ module.exports = Footer;
 
 },{"react":214}],218:[function(require,module,exports){
 var React = require('react');
+var Jumbotron = require('./Jumbotron.jsx');
 
 // Homepage Component
 var HomePage = React.createClass({
-  displayName: "HomePage",
+  displayName: 'HomePage',
 
   render: function () {
     return React.createElement(
-      "div",
-      { className: "container" },
+      'div',
+      null,
+      React.createElement(Jumbotron, null),
       React.createElement(
-        "div",
-        { className: "row" },
+        'div',
+        { className: 'container' },
         React.createElement(
-          "p",
-          null,
-          "Main content"
+          'div',
+          { className: 'row' },
+          React.createElement(
+            'p',
+            null,
+            'Main content'
+          )
         )
       )
     );
@@ -23998,7 +24004,7 @@ var HomePage = React.createClass({
 });
 module.exports = HomePage;
 
-},{"react":214}],219:[function(require,module,exports){
+},{"./Jumbotron.jsx":219,"react":214}],219:[function(require,module,exports){
 var React = require('react');
 var Link = require('react-router').Link;
 

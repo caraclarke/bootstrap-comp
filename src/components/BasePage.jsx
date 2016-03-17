@@ -18,12 +18,12 @@ var navLinks = [
 // Main App Component
 var App = React.createClass({
   render: function() {
-  
+    // const { main, content } = this.props.children
+    
     return (
       <div>
         <NavBar titleColor="#3097d1" linkColor="" navData={navLinks}/>
-        <Jumbotron />
-        <HomePage />
+          {this.props.children}
         <Footer />
       </div>
     )
