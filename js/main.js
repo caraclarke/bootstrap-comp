@@ -23903,6 +23903,7 @@ process.umask = function() { return 0; };
 var React = require('react');
 var NavBar = require('./nav/NavBar.jsx');
 var Jumbotron = require('./Jumbotron.jsx');
+var HomePage = require('./HomePage.jsx');
 var Footer = require('./Footer.jsx');
 
 var navLinks = [{
@@ -23926,14 +23927,16 @@ var App = React.createClass({
       'div',
       null,
       React.createElement(NavBar, { bgColor: '#fff', titleColor: '#3097d1', linkColor: '', navData: navLinks }),
-      React.createElement(Jumbotron, null)
+      React.createElement(Jumbotron, null),
+      React.createElement(HomePage, null),
+      React.createElement(Footer, null)
     );
   }
 });
 
 module.exports = App;
 
-},{"./Footer.jsx":217,"./Jumbotron.jsx":219,"./nav/NavBar.jsx":220,"react":214}],217:[function(require,module,exports){
+},{"./Footer.jsx":217,"./HomePage.jsx":218,"./Jumbotron.jsx":219,"./nav/NavBar.jsx":220,"react":214}],217:[function(require,module,exports){
 var React = require('react');
 
 // Footer Component
@@ -23966,6 +23969,8 @@ var Footer = React.createClass({
     );
   }
 });
+
+module.exports = Footer;
 
 },{"react":214}],218:[function(require,module,exports){
 var React = require('react');
